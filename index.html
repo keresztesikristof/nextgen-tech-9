@@ -7,8 +7,47 @@
     <link rel="stylesheet" href="style.css">
     <title>NEXTGEN TECH</title>
     <link rel="icon" type="image/x-icon" href="img/ChatGPT Image 2026. márc. 4. 08_33_52.png">
+    <style>
+        #welcome-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border: 3px solid #000;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+        }
+        button {
+            padding:10px 20px;
+            cursor:pointer;
+            background:#28a745;
+            color:white;
+            border:none;
+        }
+        #overlay{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            z-index:999;
+        }
+    </style>
 </head>
 <body>
+    <div id="welcome-box">
+        <h2>Üdvözlünk a weboldalunkon!</h2>
+        <p>Készen állsz a belépésre?</p>
+        <button onclick="bezar()">Belépés</button>
+    </div>
+    <div id="overlay"></div>
+    
     <div class="container box1">
         <div class="row">
             <div class="col-none-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center"><h1>NEXTGEN TECH</h1></div>
@@ -68,7 +107,16 @@
     Copyright 2026 Minden jog fenntartva és a weboldal a Kandó tulajdona, amely oktatási céllal jött létre.
 </footer>
 
-
+    <script>
+        window.onload = function() {
+            document.getElementById("welcome-box").style.display = "block"
+            document.getElementById("overlay").style.display = "block"
+        }
+        function bezar() {
+            document.getElementById("welcome-box").style.display = "none"
+            document.getElementById("overlay").style.display = "none"
+        }
+    </script>
 </body>
 </html>
 <!---->
