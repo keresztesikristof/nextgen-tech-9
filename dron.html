@@ -9,12 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Drón Shop</title>
+
+    <style>
+        /* erősebb háttér blokkolás */
+        .modal-backdrop.show {
+            background-color: black;
+            opacity: 1 !important;
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- 🔥 WELCOME POPUP -->
-<div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="welcomeModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center p-3">
 
@@ -43,71 +51,51 @@
 
 <!-- GRID -->
 <div class="container">
-
     <div class="row g-4">
 
-        <!-- DJI MINI 3 -->
         <div class="col-12 col-md-6">
             <div class="card h-100">
-                <img src="img/Drón/DJI-Mini-3.jpg" class="card-img-top" alt="DJI Mini 3">
-
+                <img src="img/Drón/DJI-Mini-3.jpg" class="card-img-top">
                 <div class="card-body text-center">
-                    <h5 class="card-title">DJI Mini 3</h5>
-                    <p class="card-text">
-                        Könnyű, hordozható drón utazáshoz.  
-                        Kezdőknek ideális, stabil és könnyen irányítható.
-                    </p>
+                    <h5>DJI Mini 3</h5>
+                    <p>Könnyű, kezdőknek ideális drón.</p>
                 </div>
             </div>
         </div>
 
-        <!-- DJI AIR 3 -->
         <div class="col-12 col-md-6">
             <div class="card h-100">
-                <img src="img/Drón/DJI-Air-3.jpg" class="card-img-top" alt="DJI Air 3">
-
+                <img src="img/Drón/DJI-Air-3.jpg" class="card-img-top">
                 <div class="card-body text-center">
-                    <h5 class="card-title">DJI Air 3</h5>
-                    <p class="card-text">
-                        Fejlettebb drón kettős kamerával és hosszú repülési idővel.  
-                        Tartalomgyártóknak ajánlott.
-                    </p>
+                    <h5>DJI Air 3</h5>
+                    <p>Fejlett kamerás drón hosszú repülési idővel.</p>
                 </div>
             </div>
         </div>
 
-        <!-- DJI AVATA -->
         <div class="col-12 col-md-6">
             <div class="card h-100">
-                <img src="img/Drón/DJI-Avata.jpg" class="card-img-top" alt="DJI Avata">
-
+                <img src="img/Drón/DJI-Avata.jpg" class="card-img-top">
                 <div class="card-body text-center">
-                    <h5 class="card-title">DJI Avata</h5>
-                    <p class="card-text">
-                        FPV élmény drón, mintha benne ülnél.  
-                        Gyors, izgalmas és kreatív repülés.
-                    </p>
+                    <h5>DJI Avata</h5>
+                    <p>FPV élmény drón, gyors és izgalmas.</p>
                 </div>
             </div>
         </div>
 
-        <!-- TINYHAWK -->
         <div class="col-12 col-md-6">
             <div class="card h-100">
-                <img src="img/Drón/EMAX-Tinyhawk-II.jpg" class="card-img-top" alt="Tinyhawk II">
-
+                <img src="img/Drón/EMAX-Tinyhawk-II.jpg" class="card-img-top">
                 <div class="card-body text-center">
-                    <h5 class="card-title">EMAX Tinyhawk II</h5>
-                    <p class="card-text">
-                        FPV tanuló drón, strapabíró és gyors.  
-                        Kezdőknek tökéletes versenydrón alap.
-                    </p>
+                    <h5>Tinyhawk II</h5>
+                    <p>Kezdő FPV versenydrón.</p>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
 <!-- FOOTER -->
 <footer class="text-center mt-5 p-3">
     <a href="./engineered_by.html" class="btn btn-link">Készítők</a>
@@ -119,10 +107,7 @@
 <!-- SCRIPT -->
 <script>
 window.onload = function () {
-    var modal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
-        backdrop: 'static',
-        keyboard: false
-    });
+    var modal = new bootstrap.Modal(document.getElementById('welcomeModal'));
     modal.show();
 };
 </script>
