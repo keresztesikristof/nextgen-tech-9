@@ -134,7 +134,7 @@ nav ul li a:hover{
 
 .card p{
     margin-bottom:20px;
-    color: white;
+    color:white;
 }
 
 .card button{
@@ -143,6 +143,30 @@ nav ul li a:hover{
     background:#38bdf8;
     border-radius:8px;
     cursor:pointer;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    display:flex;
+    justify-content:center;
+    margin:40px 0;
+}
+
+.btn-tech{
+    background:#38bdf8;
+    border:none;
+    color:black;
+    padding:12px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.btn-tech:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -155,6 +179,7 @@ footer{
 }
 
 /* MODAL DARK BACKDROP */
+
 .modal-backdrop.show{
     background:black;
     opacity:1 !important;
@@ -165,13 +190,18 @@ footer{
 
 <body>
 
-<!-- 🔥 WELCOME POPUP -->
+<!-- WELCOME POPUP -->
+
 <div class="modal fade" id="welcomeModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+
   <div class="modal-dialog modal-dialog-centered">
+
     <div class="modal-content text-center p-3">
 
       <div class="modal-header border-0">
-        <h4 class="modal-title w-100">🤖 Robotika Webshop</h4>
+        <h4 class="modal-title w-100">
+            🤖 Robotika Webshop
+        </h4>
       </div>
 
       <div class="modal-body">
@@ -186,11 +216,15 @@ footer{
       </div>
 
     </div>
+
   </div>
+
 </div>
 
 <!-- NAVBAR -->
+
 <nav>
+
     <div class="logo">ROBOTIKA 🤖</div>
 
     <ul>
@@ -198,9 +232,11 @@ footer{
         <li><a href="#">Termékek</a></li>
         <li><a href="#">Kapcsolat</a></li>
     </ul>
+
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
 
     <h1>Future Technology</h1>
@@ -214,6 +250,7 @@ footer{
 </section>
 
 <!-- PRODUCTS -->
+
 <section class="products">
 
     <h2>Népszerű Termékek ⚡</h2>
@@ -242,20 +279,44 @@ footer{
 
 </section>
 
+<!-- BACK BUTTON -->
+
+<div class="back-btn">
+
+    <a href="index.html" class="btn-tech text-decoration-none">
+        ⬅ Vissza a Főoldalra
+    </a>
+
+</div>
+
 <!-- FOOTER -->
+
 <footer class="text-center mt-5 p-3">
-    <a href="./engineered_by.html" class="btn btn-link">Készítők</a>
+
+    <a href="./engineered_by.html" class="btn btn-link">
+        Készítők
+    </a>
+
     <p class="small text-muted">
         Copyright 2026 • Kandó • Oktatási projekt
     </p>
+
 </footer>
 
 <!-- SCRIPT -->
+
 <script>
+
 window.onload = function () {
-    var modal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+
+    var modal = new bootstrap.Modal(
+        document.getElementById('welcomeModal')
+    );
+
     modal.show();
+
 };
+
 </script>
 
 </body>
