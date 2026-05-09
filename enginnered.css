@@ -1,5 +1,6 @@
 .bod{
    background-image: url("https://thumbs.dreamstime.com/b/modern-abstract-black-white-dot-pattern-background-minimalist-geometric-design-digital-art-web-captivating-texture-373407832.jpg");
+   text-decoration: aliceblue;
 }
 .crators {
   width: auto;
@@ -14,5 +15,5 @@ ul {
 li {
   border-bottom: 1px solid gray;
   padding: 5px;
-}
+} 
 
