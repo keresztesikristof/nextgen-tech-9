@@ -7,234 +7,161 @@
     <link rel="stylesheet" href="style.css">
     <title>Okos eszközök</title>
     <link rel="shortcut icon" href="img/ChatGPT Image 2026. márc. 4. 08_33_52.png" type="image/x-icon">
-    <style>
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+        body {
+            background-color: #0b1424;
+            color: #ffffff;
+            padding: 20px;
+        }
 
-body{
-    background:#0f172a;
-    color:white;
-    overflow-x:hidden;
-}
+        .page-container {
+            max-width: 600px;
+            margin: 0 left;
+        }
 
-/* LOADING */
+        .main-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
 
-#loadingScreen{
-    position:fixed;
-    inset:0;
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:9999;
-    font-size:25px;
-    letter-spacing:3px;
-    color:#38bdf8;
-}
+        .content-layout {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
 
-/* SITE FADE */
+        .sidebar-title {
+            background-color: #121f33;
+            padding: 15px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ffffff;
+            width: 85px;
+            text-align: center;
+            line-height: 1.4;
+        }
 
-#site{
-    opacity:0;
-    transition:1s;
-}
+        .cards-container {
+            display: flex;
+            gap: 12px;
+        }
 
-#site.show{
-    opacity:1;
-}
+        .device-card {
+            background-color: #121f33;
+            width: 145px;
+            padding: 12px 10px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* NAVBAR */
+        .device-card img {
+            width: 100%;
+            height: auto;
+            max-height: 90px;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 5px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
 
-nav{
-    width:100%;
-    padding:20px;
-    background:#111827;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        .device-card h3 {
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
 
-.logo{
-    font-size:30px;
-    font-weight:bold;
-    color:#38bdf8;
-}
+        .device-card p {
+            font-size: 0.65rem;
+            color: #b0bec5;
+            line-height: 1.4;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 10px;
+        }
 
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
+        .device-card .specs {
+            color: #0091ff;
+            font-weight: 500;
+        }
 
-nav ul li a{
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-}
+        .view-link {
+            font-size: 0.65rem;
+            color: #0091ff;
+            text-decoration: underline;
+            align-self: flex-start;
+            margin-top: auto;
+        }
 
-nav ul li a:hover{
-    color:#38bdf8;
-}
-
-/* HERO */
-
-.hero{
-    min-height:70vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:20px;
-}
-
-.hero h1{
-    font-size:70px;
-    color:#38bdf8;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:700px;
-    font-size:22px;
-    margin-bottom:30px;
-}
-
-.hero button{
-    padding:15px 35px;
-    border:none;
-    border-radius:10px;
-    background:#38bdf8;
-    font-size:18px;
-    transition:0.3s;
-}
-
-.hero button:hover{
-    transform:scale(1.05);
-}
-
-/* CARDS */
-
-.products{
-    padding:50px 20px;
-}
-
-.cards{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-}
-
-.card{
-    width:280px;
-    background:#1e293b;
-    border:none;
-    border-radius:15px;
-    padding:25px;
-    transition:0.3s;
-    color:white;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    color:#38bdf8;
-    margin-bottom:15px;
-}
-
-.card p{
-    color:white;
-}
-
-.card .btn{
-    background:#38bdf8;
-    border:none;
-    color:black;
-    font-weight:bold;
-}
-
-.card .btn:hover{
-    background:#0ea5e9;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:60px;
-    padding:30px;
-    text-align:center;
-    background:#111827;
-}
-
-/* MODAL */
-
-.modal-content{
-    background:#1e293b;
-    color:white;
-    border-radius:20px;
-}
-
-.modal-header h4{
-    color:#38bdf8;
-}
-
-.modal-backdrop.show{
-    background:black;
-    opacity:1 !important;
-}
-
-/* COPYRIGHT */
-
-.copyright{
-    color: white;
-}
-
-</style>
+        .view-link:hover {
+            color: #52b1ff;
+        }
+    </style>
 </head>
 <body>
 
 
-<div class="modal fade" id="welcomeModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="page-container">
+        
+        <h2 class="main-title">Termékek:</h2>
 
-  <div class="modal-dialog modal-dialog-centered">
+        <div class="content-layout">
+            
+            <div class="sidebar-title">
+                Okos eszközök
+            </div>
 
-    <div class="modal-content text-center p-3">
+            <div class="cards-container">
 
-      <div class="modal-header border-0">
-        <h4 class="modal-title w-100">
-            Okos Eszközök
-        </h4>
-      </div>
+                <div class="device-card">
+                    <img src="img/Okoseszköz/S24 Ultra.png" alt="Samsung S24 Ultra">
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p>Ha tanácstalan vagy, ez a tökéletes választás.</p>
+                    <p class="specs">8 magos CPU, Adreno 750 GPU, 6.8" Dynamic AMOLED 2X 120Hz kijelző (1440x3120).</p>
+                    <a href="#" class="view-link">Megnézem</a>
+                </div>
 
-      <div class="modal-body">
-        Üdv a Okoseszközök világában!<br>
-        Fedezd fel a mai világ eszközeit.
-      </div>
+                <div class="device-card">
+                    <img src="img/Okoseszköz/Iphone 15.png" alt="iPhone 15">
+                    <h3>iPhone 15</h3>
+                    <p>Ha Apple-ben gondolkodsz, ezt a modellt ajánlom.</p>
+                    <p class="specs">Alumínium ház, XDR OLED kijelző, Dynamic Island, A16 Bionic, 5 magos GPU, 15W töltés.</p>
+                    <a href="#" class="view-link">Megnézem</a>
+                </div>
 
-      <div class="modal-footer border-0 justify-content-center">
-        <button class="btn btn-primary" data-bs-dismiss="modal">
-            Belépés
-        </button>
-      </div>
+                <div class="device-card">
+                    <img src="img/Okoseszköz/Lenovo V15 G4 AMN Ryzen5.png" alt="Lenovo V15">
+                    <h3>Lenovo V15 G4 AMN</h3>
+                    <p>Ha megbízható laptopot szeretnél munkára vagy tanulásra.</p>
+                    <p class="specs">Ryzen 5 7520U, Radeon 610M, 1TB M.2 SSD, 8/16GB DDR5 RAM, FHD 60Hz kijelző.</p>
+                    <a href="#" class="view-link">Megnézem</a>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </div>
-
-</div>
-
 <nav>
 
-    <div class="logo">Okos Eszközök</div>
+<!-- <div class="logo">Okos Eszközök</div>
 
     <ul>
         <li><a href="index.html">Főoldal</a></li>
@@ -274,7 +201,7 @@ footer{
      <div class="card">
             <img src="img/Okoseszköz/Iphone 15.png">
             <h1>Ha meg iphoneban gondolkodsz akkor figyelmedbe tudom ajánlani az Iphone 15 készüléket</h1>
-            <h3>Alumínium ház, XDR Képernyő, 6.1-inches OLED Display, 2556x1179-es felbontás, Dynamic Island, A16 Bionic Chip, 6 Magos 2 Performance és 4 hatékonysági mag, 5 Magos Videókártya Dolgozik Benne, <!--Kamera-->, Az aksija maximum Audio Playbackel 80 Órát is bírhat akár a telefon és vezetéknélkül tölthető maximum 15w-ig.</h3>
+            <h3>Alumínium ház, XDR Képernyő, 6.1-inches OLED Display, 2556x1179-es felbontás, Dynamic Island, A16 Bionic Chip, 6 Magos 2 Performance és 4 hatékonysági mag, 5 Magos Videókártya Dolgozik Benne, , Az aksija maximum Audio Playbackel 80 Órát is bírhat akár a telefon és vezetéknélkül tölthető maximum 15w-ig.</h3>
     </div>
 
     <div class="card">
@@ -291,8 +218,8 @@ footer{
 
     </div>
 </div>
-</div>
-</section>
+</div> 
+</section> -->
 
 <!-- FOOTER -->
 <footer class="text-center mt-5 p-3">
